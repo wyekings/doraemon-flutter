@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  List<Module> items = [
+    Module('Counter', 'counter'),
+    Module('Get State', 'get_state'),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -14,17 +24,25 @@ class HomePage extends StatelessWidget {
             crossAxisCount: 3,
             childAspectRatio: 1.0,
           ),
-          itemCount: 1,
+          itemCount: items.length,
           itemBuilder: (context, index) {
+            Module _module = items[index];
             return Center(
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, 'counter');
+                  Navigator.pushNamed(context, _module.route);
                 },
-                child: const Text('Counter'),
+                child: Text(_module.name),
               ),
             );
           }),
     );
   }
+}
+
+class Module {
+  final String name;
+  final String route;
+
+  Module(this.name, this.route);
 }

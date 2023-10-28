@@ -1,5 +1,6 @@
 import 'package:doraemon/ui/pages/counter/counter.dart';
 import 'package:doraemon/ui/pages/home/home.dart';
+import 'package:doraemon/ui/pages/state/get_state.dart';
 import 'package:flutter/material.dart';
 
 class DoraemonApp extends StatelessWidget {
@@ -16,7 +17,8 @@ class DoraemonApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomePage(),
-        'counter': (context) => const CounterPage(title: 'Counter')
+        'counter': (context) => const CounterPage(title: 'Counter'),
+        'get_state': (context) => const GetStatePage(),
       },
     );
   }

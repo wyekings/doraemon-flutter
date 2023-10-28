@@ -60,6 +60,7 @@ class _CounterPageState extends State<CounterPage> {
 
   @override
   Widget build(BuildContext context) {
+    debugPrint('build----------->');
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
