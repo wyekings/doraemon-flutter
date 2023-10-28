@@ -1,4 +1,5 @@
-import 'package:doraemon/ui/counter/counter.dart';
+import 'package:doraemon/ui/pages/counter/counter.dart';
+import 'package:doraemon/ui/pages/home/home.dart';
 import 'package:flutter/material.dart';
 
 class DoraemonApp extends StatelessWidget {
@@ -12,7 +13,11 @@ class DoraemonApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const CounterPage(title: "Counter"),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomePage(),
+        'counter': (context) => const CounterPage(title: 'Counter')
+      },
     );
   }
 }
