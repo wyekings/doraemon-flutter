@@ -11,6 +11,7 @@ class _HomePageState extends State<HomePage> {
   List<Module> items = [
     Module('Counter', 'counter'),
     Module('Get State', 'get_state'),
+    Module('Text', 'text'),
   ];
 
   @override
@@ -26,13 +27,13 @@ class _HomePageState extends State<HomePage> {
           ),
           itemCount: items.length,
           itemBuilder: (context, index) {
-            Module _module = items[index];
+            Module module = items[index];
             return Center(
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, _module.route);
+                  Navigator.pushNamed(context, module.route);
                 },
-                child: Text(_module.name),
+                child: Text(module.name),
               ),
             );
           }),
