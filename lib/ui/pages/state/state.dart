@@ -48,9 +48,9 @@ class GetStatePage extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                         builder: (context) {
-                          return GetStatePage();
+                          return const GetStatePage();
                         },
-                        settings: RouteSettings(arguments: 'args')),
+                        settings: const RouteSettings(arguments: 'args')),
                   );
                   ScaffoldState? state = context.findAncestorStateOfType();
                   state?.openDrawer();
@@ -61,7 +61,7 @@ class GetStatePage extends StatelessWidget {
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return GetStatePage();
+                    return const GetStatePage();
                   }));
                   _scafoldGlobalState.currentState?.openDrawer();
                 },
